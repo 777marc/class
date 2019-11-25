@@ -16,4 +16,25 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('home');
+
+
+Route.group(() => {
+  Route.get('login', 'SessionController.create')
+  Route.post('login', 'SessionController.store')
+  Route.get('register', 'UserController.create')
+  Route.post('register', 'UserController.store')
+}).middleware(['guest'])
+
+// AUTH
+Route
+  .post('login', 'UserController.login')
+  .middleware('guest')
+
+Route
+  .get('users/:id', 'UserController.show')
+  .middleware('auth')
+
+  Route.group(() => {
+    Route.get('logout', 'SessionController.delete')
+  }).middleware(['auth'])
