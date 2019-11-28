@@ -21,7 +21,7 @@ Route.on('/').render('home');
 
 Route.group(() => {
   Route.get('login', 'SessionController.create')
-  Route.post('login', 'SessionController.store')
+  Route.post('login', 'UserController.login')
   Route.get('register', 'UserController.create')
   Route.post('register', 'UserController.store')
 }).middleware(['guest'])

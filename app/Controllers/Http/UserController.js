@@ -37,8 +37,12 @@ class UserController {
     }
 
     async login ({ auth, request }) {
-        const { email, password } = request.all();
-        await auth.attempt(email, password);
+
+        const { username, password } = request.all();
+
+        console.log(username, password)
+
+        await auth.attempt(username, password);
     
         return 'Logged in successfully';
     }

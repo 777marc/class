@@ -8,7 +8,7 @@ html, body {
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  padding: 50px;
+  /* padding: 50px; */
 }
 
 * {
@@ -17,11 +17,15 @@ body {
 }
 
 .header {
-  border-bottom: 1px solid gray;
-  padding-bottom: 2px;
+  /* border-bottom: 1px solid gray; */
+  padding: 25px;
+  position: relative;
+  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }
 
-button {
+button, a {
   background-color: lightgray; /* Green */
   border: none;
   color: white;
@@ -40,6 +44,6 @@ input {
 
 .centered {
   position: fixed; /* or absolute */
-  top: 50%;
+  top: 30%;
   left: 50%;
 }

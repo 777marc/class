@@ -21,6 +21,8 @@ class SessionController {
      */
     const { username, password } = request.all()
 
+    console.log('here')
+
     /**
      * Wrapping the authentication in order to
      * handle errors when authentication fail.
